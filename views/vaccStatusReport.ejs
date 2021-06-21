@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+
+
+    </head>
+    <body style="margin: 1%;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="userProfile" method="POST">
+                <button class="btn btn-outline-success my-2 my-sm-0" name= "getprofile" value="<%= user._id %>" type="submit">Profile</button>
+            </form>
+            <form class="form-inline my-2 my-lg-0" action='/logout'>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+            </div>
+          </nav>
+        <header id="header">
+            <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <h1>Covid-19 Your Status Report</h1>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+<form method="get" name="Form" id="add_user">
+    <table>
+        <div class="new_user">
+            <tr style="text-align: left; font-size:x-large;">
+                <th><div class="form-group">VACCINE STATUS</div></th>
+                <th><div class="form-group">LOCATION</div></th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="vacc_status" value="<%= user.vacc_status %>" readonly/>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="centreLoc" value="<%= user.centreLoc %>" readonly>
+                    </div>
+                </td>
+            </tr>
+        </div>
+    </table>    
+</form>
+<br/>
+<br/>
+<header id="header">
+    <nav>
+        <div class="container">
+            <div class="text-center">
+                <h1>Detailed report description</h1>
+            </div>
+        </div>
+    </nav>
+</header>
+ <form method="get" name="Form"  id="add_user">
+     <table >
+        <div class="new_user">
+         <tr style="text-align: left; font-size: larger;">
+             <th><div class="form-group"> First dose Date</div></th>
+             <th><div class="form-group">First dose status</div></th>
+             <th><div class="form-group">Second dose Date</div></th>
+             <th><div class="form-group">Second dose status</div></th>
+         </tr>
+         <tr>
+            
+            <td>
+                <div class="form-group">
+                    <input type="text" name="first_dose_date" placeholder="First dose DATE" value="<%= user.first_dose_date %>"  readonly>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" name="first_dose_status" placeholder="Your first dose status will display here" value="<%= user.first_dose_status %>" readonly>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="text" name="second_dose_date" placeholder="Your second dose date" value="<%= user.second_dose_date %>" readonly>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <input type="tel" name="second_dose_status" value="<%= user.second_dose_status %>" placeholder="Your second dose status"  readonly>
+                </div>
+            </td>
+        </div>
+    </tr>
+</table>
+
+
+</body>
+</html>
+        

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link rel="stylesheet" href="/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        
+
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+             
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="/logout">  
+            
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log out</button>
+          </form>
+        </div>
+      </nav>
+
+        <header id="header">
+            <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <h1>Covid-19 Vaccine Registration (Page 2)</h1>
+                    </div>
+                </div>
+            </nav>
+        </header>
+       <section data-position="songs"></section>
+         <!-- form handling -->
+ <form method="post" action="/addVaccRegInfo" name="Form"  id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <label for="city" class="text-light">Choose City</label>
+            <select name="cityPicker">
+                    <option value="Brampton, 207 Bridge Road" >Brampton, 207 Bridge Road</option>
+                    <option value="Etobicoke, Good Care,120 Bulevard Road" >Etobicoke, Good Care,120 Bulevard Road</option>
+                    <option value="Midland, Modern clinic, Southall road" >Midland, Modern clinic, Southall road</option>
+                    <option value="Mississauga, Medica Zone, 654 Main street" >Mississauga, Medica Zone, 654 Main street</option>
+                    <option value="Toronto, Health Systems, 765 George Town" >Toronto, Health Systems, 765 George Town</option>
+                    <option value="Windsor, Healing, 99 True mountain road" >Windsor, Healing, 99 True mountain road</option>
+            </select>
+
+            <label for="date" class="text-light">Choose Date</label>
+            <select name="datePicker">
+                <option value="Sun Apr 18 2021">Sun Apr 18 2021</option>
+                <option value="Sun Apr 25 2021">Sun Apr 25 2021</option>
+                <option value="Sun Mar 02 2021">Sun Mar 02 2021</option>
+                <option value="Sun Mar 09 2021">Sun Mar 09 2021</option>
+                <option value="Sun Mar 16 2021">Sun Mar 16 2021</option>
+                <option value="Sun Mar 23 2021">Sun Mar 23 2021</option>
+                <option value="Sun Mar 30 2021">Sun Mar 30 2021</option>
+                <option value="Sun Apr 06 2021">Sun Apr 06 2021</option>
+                <option value="Sun Apr 13 2021">Sun Apr 13 2021</option>
+        </select>
+
+        <div class="form-group">
+            <button type="onsubmit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+
+        </div>
+      </nav>
+</form>
+
+<form class="form-inline my-2 my-lg-0" action="/showLoginPage">  
+            
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go Back</button>
+</form>
+    </body>    
+</html>

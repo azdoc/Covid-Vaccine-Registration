@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/main.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="text-center">
+                    <h1>Covid-19 User Vaccine Status Update </h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <form method="get" name="Form" id="add_user" style="margin: 3em;">
+        <table>
+            <div class="new_user">
+                <tr style="text-align: left; font-size:x-large;">
+                    <th><div class="form-group" style="margin-left: 2em;">VACCINE STATUS</div></th>
+                    <th><div class="form-group" style="margin-right: 2em;">LOCATION</div></th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group" style="margin-left: 2em;">
+                            <input type="text" name="vacc_status" value="<%= user.vacc_status %>" readonly>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group" style="margin-right: 2em;">
+                            <input type="text" name="centreLoc" value="<%= user.centreLoc %>" readonly>
+                        </div>
+                    </td>
+                </tr>
+            </div>
+        </table>    
+    </form>
+    
+    <form method="post" action="/updateFisrtVacRecord" name="Form"  id="add_user">
+        <div class="new_user">
+            <table >
+                <tr>
+                    <input type="hidden" name="id" value="<%= user._id %>">
+                    <td >
+                    <div class="form-group" style="margin-right: 2em;">
+                        <label for="fdstatus" class="text-light">First Dose Status</label>
+                        <input type="text" name="fdstatus" value="<%= user.first_dose_status %>" readonly>
+                    </div>
+                     </td>
+                     <td>
+                    <div class="form-group" style="margin-right: 2em;">
+                        <label for="fddate" class="text-light">First Dose Date</label>
+                        <input type="text" name="fddate" value="<%= user.first_dose_date %>" readonly>
+                    </div>
+                    </td>
+                    <td>
+                    <div class="form-group" style="margin-right: 2em;">
+                        <label for="updatefdstatus" class="text-light">Update Status</label>
+                        <select id = "fdvacstatus" name="updatefdstatus">
+                            <option value="completed">Completed</option>
+                            <option value="Failed to report">Failed to report</option>
+                    </select>
+                    </div>
+                    </td>
+                    <td>
+                    <div class="form-group">
+                        <button type="onsubmit" class="btn text-dark update" style="margin-bottom: -10%;">update</button>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <form method="post" action="/updateSecondVacRecord" name="Form"  id="add_user">
+        <div class="new_user">
+            <table>
+                <tr>
+                    <input type="hidden" name="id" value="<%= user._id %>">
+                    <td >
+                    <div class="form-group" style="margin-right: 2em;">
+                        <label for="sdstatus" class="text-light">Second Dose Status</label>
+                        <input type="text" name="sdstatus" value="<%= user.second_dose_status %>" readonly>
+                    </div>
+                     </td>
+                     <td>
+                    <div class="form-group" style="margin-right: 2em;">
+                        <label for="sddate" class="text-light">Second Dose Date</label>
+                        <input type="text" name="sddate" value="<%= user.second_dose_date %>" readonly>
+                    </div>
+                    </td>
+                    <td>
+                    <div class="form-group" style="margin-right: 2em;">
+                        <label for="updatesdstatus" class="text-light">Update Status</label>
+                        <select id = "sdvacstatus" name="updatesdstatus">
+                            <option value="completed">Completed</option>
+                            <option value="Failed to report">Failed to report</option>
+                    </select>
+                    </div>
+                    </td>
+                    <td>
+                    <div class="form-group">
+                        <button type="onsubmit" class="btn text-dark update" style="margin-bottom: -10%;">update</button>
+                    </div>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+    </form>
+    <form method="POST" action="/deleteUser" name="Form"  id="add_user">
+        <div class="new_user">
+            <div class="form-group">
+                <button type="onsubmit" class="btn text-dark update" name="id2" value="<%= user._id %>" >Delete this receipient</button>
+    </div>
+        </div>
+    </form> 
+  
+    <script>
+        if('<%=user.first_dose_status%>'.trim()== "Failed to report"){ 
+document.getElementById("sdvacstatus").disabled = true;
+}
+    </script>
+</body>
+</html>
+

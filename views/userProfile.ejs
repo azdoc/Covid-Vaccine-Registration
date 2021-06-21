@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body>
+        <header id="header">
+            <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <h1>User Profile</h1>
+                    </div>
+                </div>
+            </nav>
+        </header>
+         <form method="POST" action="/editUserProfile" name="Form"  id="add_user"> 
+             <input type="hidden" name="id" id="id"value="<%= user._id%>">
+             <div class="new_user">
+             <table class="table">
+                    <tr>
+                        <th>First Name</th><td id="fname"> <%= user.firstName%></td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th><td id="lname"> <%= user.lastName%></td>
+                    </tr>
+                    <tr>
+                        <th>Phone No</th><td id="phn"> <%= user.phNo%></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th><td id="email"> <%= user.email%></td>
+                    </tr>
+                    <tr>
+                        <th>User Name</th><td id="uname"> <%= user.userName%></td>
+                    </tr>
+                    <tr>
+                        <th>Password</th><td id="pass"> <%= user.pswd%></td>
+                    </tr>
+                    <tr>   
+                        <td colspan="2">
+                        <div class="form-group">
+                            <button type="onsubmit" class="btn text-dark update">Edit User</button>
+                        </div>   
+                        </td>                     
+                    </tr>    
+            </table> 
+            </div> 
+        </form>
+       
+
+    <!-- <script>
+      var getchecked = '<%= user.gender %>';
+      function myFunction( ) {
+        if(getchecked = 'Male')
+        {document.getElementById("radio-2").checked = true;}
+        else{document.getElementById("radi  o-3").checked = true;}         
+}
+    </script> -->
+
+</html>
